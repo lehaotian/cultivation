@@ -1,0 +1,15 @@
+socket-server-host: 127.0.0.1
+#socket-server-host: 192.168.10.200
+#socket-server-port: 9368
+socket-server-port: 9367
+client-count: 1000
+#数值表json路径
+metaPath: F:\Project\LHT\server\logic\meta
+
+#日志配置
+logging:
+  file:
+    name: .log/robot.log
+  level:
+    root: warn
+    cls.cn: debug

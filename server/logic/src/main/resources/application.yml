@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: logic
+  profiles:
+    active: local
+# netty 服务端口
+socket-port: 9367
+
+#日志配置
+logging:
+  level:
+    root: warn
+    cls.cn: debug

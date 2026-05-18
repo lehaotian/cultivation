@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:root@iap-mongo:27017/logic?authSource=admin
+    redis:
+      url: redis://iap-redis:6380
+
+#日志配置
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){red} %clr(%-5level){yellow} %clr([%-10.10thread]){green} %clr(%-50logger){cyan} %clr(%X{userId}){blue} %clr(%msg){faint} %n"

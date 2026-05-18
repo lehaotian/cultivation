@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: admin
+  profiles:
+    active: local
+server:
+  # web 服务端口
+  port: 9366
+
+#日志配置
+logging:
+  level:
+    root: warn
+    cls.cn: debug
+

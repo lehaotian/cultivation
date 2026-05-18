@@ -1,0 +1,15 @@
+spring:
+  data:
+    redis:
+      url: redis://:lht@www.leht.art:11041
+  mongodb:
+    uri: mongodb://lht:lht@www.leht.art:11042/logic?authSource=admin
+dataDir: .meta/
+#日志配置
+logging:
+  file:
+    name: .log/admin.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread] %logger %msg %n"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){red} %clr(%5level){yellow} %clr([%10.10thread]){green} %clr(%40logger){cyan} %clr(%msg){faint} %n"
+

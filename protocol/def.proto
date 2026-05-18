@@ -1,0 +1,35 @@
+syntax = "proto3";
+package protobuf;
+
+option java_package = "cls.cn.base.proto";
+option java_multiple_files = true; // 启用多文件模式
+import "include/google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+  optional int32 msgId = 50000;
+}
+
+// 玩家数据
+message PlayerPb{
+  string id = 1; // 玩家id
+  optional string name = 2;// 昵称
+  optional LevelPb level = 3;// 等级
+  optional BackpackPb backpack = 4;// 背包
+}
+// 等级
+message LevelPb {
+  optional int32 level = 1; // 等级
+  optional int64 exp = 2; // 经验
+}
+
+// 背包
+message BackpackPb {
+  map<int32, int64> currency = 1; // 货币
+  map<int32, ItemPb> items = 2; // 道具
+}
+
+// 道具
+message ItemPb {
+  optional int32 id = 1; // id
+  optional int64 count = 2; // 数量
+}

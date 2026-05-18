@@ -1,0 +1,55 @@
+syntax = "proto3";
+package protobuf;
+
+option java_package = "cls.cn.base.proto";
+
+import "def.proto";
+
+// 心跳包
+message CSHeartbeat {
+  option (msgId) = 1000;
+}
+// 心跳包
+message SCHeartbeat {
+  option (msgId) = 1001;
+  int64 serverTime = 1; // 服务器时间
+}
+// 登录请求
+message CSLogin {
+  option (msgId) = 1002;
+  string id = 1; // 账号id
+  string token = 2; // token
+}
+// 登录返回
+message SCLogin {
+  option (msgId) = 1003;
+  PlayerPb player = 1; // 玩家数据
+}
+// 断线重连
+message CSReconnect {
+  option (msgId) = 1004;
+  string id = 1; // 账号id
+  string token = 2; // token
+}
+// 断线重连返回
+message SCReconnect {
+  option (msgId) = 1005;
+  PlayerPb player = 1; // 玩家数据 diff
+}
+// 错误返回
+message SCError {
+  option (msgId) = 1006;
+  int32 code = 1; // 错误码
+  string info = 2; // 错误信息
+}
+// GM指令
+message CSGMCommand {
+  option (msgId) = 1007;
+  string command = 1; // 指令
+  repeated string args = 2; // 参数
+}
+// GM指令返回
+message SCGMCommand {
+  option (msgId) = 1008;
+  PlayerPb player = 1; // 玩家数据 diff
+}
